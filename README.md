@@ -16,7 +16,6 @@ After creating cleaned dataframes for each country's COVID-19 data, I started ex
 |                              |                                  |
 | ---------------------------- | -------------------------------- |
 |![](images/us_daily_cases.png)|![](images/canada_daily_cases.png)|
-|                              |                                  |
 |![](images/aus_daily_cases.png)|![](images/nz_daily_cases.png)   |
   
 
