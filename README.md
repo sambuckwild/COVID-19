@@ -14,6 +14,8 @@ Initial plotting say maybe of bar charts over time etc to see why this was impor
 show which countries or locations we want to compare and way
 bring in the info about population and density now, maybe healthcare as well?
 
+![](images/four_merge_daily_cases.png) ![](images/three_merge_daily_cases.png) 
+
 use this to go through question thought process to see how you got to final question/goal or hypothesis
 
 # Analysis
