@@ -27,7 +27,7 @@ Upon initial analysis of the y-axis (number of COVID-19 cases) it was clear the 
 
 To be able to better compare the four countries, I created a new column in my merged dataframe with the value of daily cases per 100,000 people in each country. This column is the total number of daily cases divided by the country's population over 100,000. As you can see below, with the new proportional data we can see more of each county's results; however, the United States is still far worse off on handling the pandemic compared to Canada, Australia and New Zealand. 
 
-![](images/three_merge_daily_proportional.png)  
+![](images/four_merge_daily_proportional.png)  
 
 **Fig 3: Proportionally Comparing COVID-19 Daily Case Incidence: Comparing United States, Canada, Australia + New Zealand daily incidence of COVID-19 cases per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.**
 

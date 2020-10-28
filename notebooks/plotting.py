@@ -73,7 +73,7 @@ if __name__ == '__main__':
     plt.setp(ax.xaxis.get_minorticklabels(), rotation=90, ha='center')
     image_of_plot(us_plot)
     #canada daily cases plot
-    canada_plot = '../images/canada_daily_cases.png'
+    canada_plot = '../images/canada_daily_cases.eps'
     c = canada_covid_total[can_date_col]
     d = canada_covid_total['numtoday']
     fig, ax = plt.subplots(figsize=(6,4))
