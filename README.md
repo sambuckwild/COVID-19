@@ -33,7 +33,7 @@ To be able to better compare the four countries, I created a new column in my me
 
 From the beginning of the pandemic through October 26, 2020, the total number of COVID-19 cases in each country and the proportional number of COVID-19 cases per 100,000 people are as follows:  
 | **Country**        | **Total # COVID-19 Cases** | **Total # COVID-19 Cases per 100,000 people**|
-| ------------------ | -------------------------- | -------------------------------------------- |
+| :----------------: | :------------------------: | :------------------------------------------: |
 |   United States    |          8,617,022         |                     2603.3                   |
 |       Canada       |            203,688         |                      539.7                   |
 |     Australia      |             27,527         |                      107.9                   |
