@@ -89,6 +89,17 @@ def datatype_integer(df, col_lst):
         df[col] = df[col].astype(int)
     return df
 
+def new_proportional_cols(df, new_col_lst, prop_lst, col_val_lst):
+    '''Inputs: df - dataframe
+                new_col_lst - list of new column names (string) 
+               prop_lst - list of values to divide by to make proportional
+               col_val_lst - list of column names (string) to divide by prop value
+        Creates new columns with proportional data
+        Output: dataframe'''
+    for col1, col2, val in zip(new_col_lst, col_val_lst, prop_lst):
+        df[col1] = df[col2] / val
+    return df
+
 def merge_df_daily_cases(df1, df2, df1_cols, df2_cols, left_col, right_col):
     '''Inputs: df1 - left join dataframe
                df2 - right join dataframe
@@ -107,6 +118,13 @@ def df_to_csv(df, file):
         Create new csv data file of cleaned up dataframes
         Output: csv file'''
     df.to_csv(file, index=True)
+
+def pop_density(pop, area):
+    '''Inputs: pop - population of location
+               area - area in square kilometers of location
+        Calculate the population density in person per square km for a location
+        Output: population density (float)'''
+    return pop / area
 
 if __name__ == '__main__':
     '''USA Data'''
@@ -249,4 +267,28 @@ if __name__ == '__main__':
     covid_merge = rename_columns(covid_merge, {'Aus_Date': 'Date'})
     covid_merge = change_to_datetime(covid_merge, 'Date', day1=False)
 
-   
+    '''creating proportional data between four countries using population density'''
+    us_pop = 331002651/100000 #population per 100,000 people
+    us_area = 9147420 #km**2
+    can_pop = 37742154/100000
+    can_area = 9093510 
+    aus_pop = 25499884/100000
+    aus_area = 7682300
+    nz_pop = 4822233/100000
+    nz_area = 263310
+    co_pop = 5758736/100000
+    co_area = 269837
+    us_popden = pop_density(us_pop,us_area)
+    can_popden = pop_density(can_pop,can_area)
+    aus_popden = pop_density(aus_pop,aus_area)
+    nz_popden = pop_density(nz_pop,nz_area)
+    co_popden = pop_density(co_pop,co_area)
+
+    #create new columns in merged df for cases/population to make them more proportional across four countries
+    new_lst = ['Aus_Daily_prop', 'NZ_Daily_prop', 'Canada_Daily_prop', 'US_Daily_prop']
+    col_lst = ['Aus_Daily_Cases', 'NZ_Daily_Cases', 'Canada_Daily_Cases', 'US_Daily_Totals']
+    prop_lst = [aus_pop, nz_pop, can_pop, us_pop]
+    covid_merge = new_proportional_cols(covid_merge, new_lst, prop_lst, col_lst)
+
+    #create new column in colorado dataframe to make it proportional to population
+    co_covid = new_proportional_cols(co_covid, ['CO_Daily_prop'], [co_pop], ['new_case'])

@@ -23,9 +23,9 @@ def daily_case_bar(df, dates, daily_cases, clr, title, lbl, ax):
         Function to create bar plot of daily covid cases
         Output: bar plot'''
     ax.bar(dates, daily_cases, color = clr, label=lbl)
-    ax.set_title(title, fontsize=20)
-    ax.set_ylabel('Number of SARS-CoV-2 Cases', fontsize=16)
-    ax.set_xlabel('\nDate', fontsize=16)
+    ax.set_title(title, fontsize=18)
+    ax.set_ylabel('# COVID-19 Cases', fontsize=14)
+    ax.set_xlabel('\nDate', fontsize=14)
     ax.xaxis.set_major_locator(MonthLocator())
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.xaxis.set_minor_locator(MonthLocator(bymonthday=15))
@@ -33,8 +33,28 @@ def daily_case_bar(df, dates, daily_cases, clr, title, lbl, ax):
     ax.tick_params(axis='x', which='major', length=17, width=1, labelsize=1)
     ax.tick_params(axis='x', which='minor', length=3, width=1, labelsize='medium')
     ax.legend()
-    
- 
+
+def daily_case_bar_proportional(df, dates, daily_cases, clr, title, lbl, ax):
+    '''Inputs: df - dataframe to plot
+               dates - x value for bar plot, df[date_column]
+               dail_cases - y value for bar plot, df[daily_counts]
+               clr - color for plot (string)
+               title - string of title for graph
+               lbl - string for label for data on plot
+               ax_ - default to one ax
+        Function to create bar plot of daily covid cases with data proportional to location population
+        Output: bar plot'''
+    ax.bar(dates, daily_cases, color = clr, label=lbl)
+    ax.set_title(title, fontsize=18)
+    ax.set_ylabel('# COVID-19 Cases per 100,000 people', fontsize=14)
+    ax.set_xlabel('\nDate', fontsize=14)
+    ax.xaxis.set_major_locator(MonthLocator())
+    ax.xaxis.set_major_formatter(NullFormatter())
+    ax.xaxis.set_minor_locator(MonthLocator(bymonthday=15))
+    ax.xaxis.set_minor_formatter(DateFormatter('\n%b %Y'))
+    ax.tick_params(axis='x', which='major', length=17, width=1, labelsize=1)
+    ax.tick_params(axis='x', which='minor', length=3, width=1, labelsize='medium')
+    ax.legend()
 
 def image_of_plot(file):
     '''Input: file - file path for image (string)
@@ -115,3 +135,34 @@ if __name__ == '__main__':
     daily_case_bar(co_covid, g, h, 'm', 'Comparison of COVID-19 Daily Cases: New Zealand + Colorado', 'Colorado', ax)
     daily_case_bar(nz_covid_total, x, y, 'black', 'Comparison of COVID-19 Daily Cases: New Zealand + Colorado', 'New Zealand', ax)
     image_of_plot(merge_plot_4)
+
+    #plot with four countries + proportional data
+    merge_plot_5 = '../images/four_merge_daily_proportional.png'
+    fig, ax = plt.subplots(figsize=(10,6))
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['US_Daily_prop'], '#FBC00C', 'Proportional Comparison of COVID-19 Daily Cases', 'United States', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Canada_Daily_prop'], '#A62205', 'Proportional Comparison of COVID-19 Daily Cases', 'Canada', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Aus_Daily_prop'], '#1A89F4', 'Proportional Comparison of COVID-19 Daily Cases', 'Australia', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+    image_of_plot(merge_plot_5)
+
+    #plot with canada, aus, nz + proportional data
+    merge_plot_6 = '../images/three_merge_daily_proportional.png'
+    fig, ax = plt.subplots(figsize=(10,6))
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Canada_Daily_prop'], '#A62205', 'Proportional Comparison of COVID-19 Daily Cases', 'Canada', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Aus_Daily_prop'], '#1A89F4', 'Proportional Comparison of COVID-19 Daily Cases', 'Australia', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+    image_of_plot(merge_plot_6)
+
+    #plot with aus and nz + proportional data
+    merge_plot_7 = '../images/two_merge_daily_proportional.png'
+    fig, ax = plt.subplots(figsize=(10,6))
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Aus_Daily_prop'], '#1A89F4', 'Proportioanl Comparison of COVID-19 Daily Cases', 'Australia', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+    image_of_plot(merge_plot_7)
+
+    #plot with new zealand and colorado + proportional data
+    merge_plot_8 = '../images/co_nz_merge_daily_proportional.png'
+    fig, ax = plt.subplots(figsize=(10,6))
+    daily_case_bar_proportional(co_covid, co_covid[us_case_date_col], co_covid['CO_Daily_prop'], 'm', 'Proportional Comparison of COVID-19 Daily Cases', 'Colorado', ax)
+    daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+    image_of_plot(merge_plot_8)

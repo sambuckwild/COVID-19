@@ -186,7 +186,7 @@ image_of_plot(colorado_plot)
 
 #plot with four countries
 merge_plot_1 = '../images/four_merge_daily_cases.png'
-fig, ax = plt.subplots(figsize=(12,8))
+fig, ax = plt.subplots(figsize=(10,6))
 daily_case_bar(us_covid_total, a, b, '#FBC00C', 'Comparison of COVID-19 Daily Cases: Four Countries', 'United States', ax)
 daily_case_bar(canada_covid_total, c, d, '#A62205', 'Comparison of COVID-19 Daily Cases: Four Countries', 'Canada', ax)
 daily_case_bar(aus_covid, e, f, '#1A89F4', 'Comparison of COVID-19 Daily Cases: Four Countries', 'Australia', ax)
@@ -195,7 +195,7 @@ image_of_plot(merge_plot_1)
 
 #plot with canada, aus, nz
 merge_plot_2 = '../images/three_merge_daily_cases.png'
-fig, ax = plt.subplots(figsize=(12,8))
+fig, ax = plt.subplots(figsize=(10,6))
 daily_case_bar(canada_covid_total, c, d, '#A62205', 'Comparison of COVID-19 Daily Cases: Three Countries', 'Canada', ax)
 daily_case_bar(aus_covid, e, f, '#1A89F4', 'Comparison of COVID-19 Daily Cases: Three Countries', 'Australia', ax)
 daily_case_bar(nz_covid_total, x, y, 'black', 'Comparison of COVID-19 Daily Cases: Three Countries', 'New Zealand', ax)
@@ -203,14 +203,72 @@ image_of_plot(merge_plot_2)
 
 #plot with aus and nz
 merge_plot_3 = '../images/two_merge_daily_cases.png'
-fig, ax = plt.subplots(figsize=(12,8))
+fig, ax = plt.subplots(figsize=(10,6))
 daily_case_bar(aus_covid, e, f, '#1A89F4', 'Comparison of COVID-19 Daily Cases: Two Countries', 'Australia', ax)
 daily_case_bar(nz_covid_total, x, y, 'black', 'Comparison of COVID-19 Daily Cases: Two Countries', 'New Zealand', ax)
 image_of_plot(merge_plot_3)
 
 #plot with new zealand and colorado
 merge_plot_4 = '../images/co_nz_merge_daily_cases.png'
-fig, ax = plt.subplots(figsize=(12,8))
+fig, ax = plt.subplots(figsize=(10,6))
 daily_case_bar(co_covid, g, h, 'm', 'Comparison of COVID-19 Daily Cases: New Zealand + Colorado', 'Colorado', ax)
 daily_case_bar(nz_covid_total, x, y, 'black', 'Comparison of COVID-19 Daily Cases: New Zealand + Colorado', 'New Zealand', ax)
 image_of_plot(merge_plot_4)
+
+'''Get population, density for each country and redo numbers to compare'''
+
+us_pop = 331002651/100000 #population per 100,000 people
+us_area = 9147420 #km**2
+can_pop = 37742154/100000
+can_area = 9093510 
+aus_pop = 25499884/100000
+aus_area = 7682300
+nz_pop = 4822233/100000
+nz_area = 263310
+co_pop = 5758736/100000
+co_area = 269837
+us_popden = pop_density(us_pop,us_area)
+can_popden = pop_density(can_pop,can_area)
+aus_popden = pop_density(aus_pop,aus_area)
+nz_popden = pop_density(nz_pop,nz_area)
+co_popden = pop_density(co_pop,co_area)
+
+#create new columns in merged df for cases/population to make them more proportional across four countries
+new_lst = ['Aus_Daily_prop', 'NZ_Daily_prop', 'Canada_Daily_prop', 'US_Daily_prop']
+col_lst = ['Aus_Daily_Cases', 'NZ_Daily_Cases', 'Canada_Daily_Cases', 'US_Daily_Totals']
+prop_lst = [aus_pop, nz_pop, can_pop, us_pop]
+covid_merge = new_proportional_cols(covid_merge, new_lst, prop_lst, col_lst)
+
+#create new column in colorado dataframe to make it proportional to population
+co_covid = new_proportional_cols(co_covid, ['CO_Daily_prop'], [co_pop], ['new_case'])
+
+#plot with four countries + proportional data
+merge_plot_5 = '../images/four_merge_daily_proportional.png'
+fig, ax = plt.subplots(figsize=(10,6))
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['US_Daily_prop'], '#FBC00C', 'Proportional Comparison of COVID-19 Daily Cases', 'United States', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Canada_Daily_prop'], '#A62205', 'Proportional Comparison of COVID-19 Daily Cases', 'Canada', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Aus_Daily_prop'], '#1A89F4', 'Proportional Comparison of COVID-19 Daily Cases', 'Australia', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+image_of_plot(merge_plot_5)
+
+#plot with canada, aus, nz + proportional data
+merge_plot_6 = '../images/three_merge_daily_proportional.png'
+fig, ax = plt.subplots(figsize=(10,6))
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Canada_Daily_prop'], '#A62205', 'Proportional Comparison of COVID-19 Daily Cases', 'Canada', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Aus_Daily_prop'], '#1A89F4', 'Proportional Comparison of COVID-19 Daily Cases', 'Australia', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+image_of_plot(merge_plot_6)
+
+#plot with aus and nz + proportional data
+merge_plot_7 = '../images/two_merge_daily_proportional.png'
+fig, ax = plt.subplots(figsize=(10,6))
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['Aus_Daily_prop'], '#1A89F4', 'Proportioanl Comparison of COVID-19 Daily Cases', 'Australia', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+image_of_plot(merge_plot_7)
+
+#plot with new zealand and colorado + proportional data
+merge_plot_8 = '../images/co_nz_merge_daily_proportional.png'
+fig, ax = plt.subplots(figsize=(10,6))
+daily_case_bar_proportional(co_covid, co_covid[us_case_date_col], co_covid['CO_Daily_prop'], 'm', 'Proportional Comparison of COVID-19 Daily Cases', 'Colorado', ax)
+daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['NZ_Daily_prop'], 'black', 'Proportional Comparison of COVID-19 Daily Cases', 'New Zealand', ax)
+image_of_plot(merge_plot_8)
