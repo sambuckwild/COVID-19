@@ -10,14 +10,12 @@ show list of columns & datatype --> so that way can show what I paired it down t
 link to sources for data, how many data points (rows) etc
 
 # Exploratory Data Analysis
------------------------------
+
 After creating cleaned dataframes for each country's COVID-19 data, I started exploring the data by looking at  daily case incidence. I created a bar plot function to plot the daily case counts over the past ten months of the pandemic. I plotted each country separately at first:
 
-|                              |                                  |
-| ---------------------------- | -------------------------------- |
-|![](images/us_daily_cases.png)|![](images/canada_daily_cases.png)|
-|                              |                                  |
-|![](images/aus_daily_cases.png)|![](images/nz_daily_cases.png)   |
+![](images/us_daily_cases.png) ![](images/canada_daily_cases.png)
+
+![](images/aus_daily_cases.png) ![](images/nz_daily_cases.png)   
   
 
 Upon initial analysis of the y-axis (number of COVID-19 cases) it was clear the United States has an overwhelmingly larger amount of COVID-19 cases compared to Canada, Australia and New Zealand. I then wanted to see how the countries compared to each other. I plotted all four together, but due to the United States' highest daily count around 80,000 cases it was hard to see the other three countries data. 
