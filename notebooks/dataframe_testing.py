@@ -149,6 +149,7 @@ a = us_covid_total[us_case_date_col]
 b = us_covid_total['new_case']
 fig, ax = plt.subplots(figsize=(6,4))
 daily_case_bar(us_covid_total, a, b, '#FBC00C', 'United States COVID-19 Daily Cases', 'United States', ax)
+plt.setp(ax.xaxis.get_minorticklabels(), rotation=90, ha='center')
 image_of_plot(us_plot)
 #canada daily cases plot
 canada_plot = '../images/canada_daily_cases.png'
@@ -156,6 +157,7 @@ c = canada_covid_total[can_date_col]
 d = canada_covid_total['numtoday']
 fig, ax = plt.subplots(figsize=(6,4))
 daily_case_bar(canada_covid_total, c, d, '#A62205', 'Canada COVID-19 Daily Cases', 'Canada', ax)
+plt.setp(ax.xaxis.get_minorticklabels(), rotation=90, ha='center')
 image_of_plot(canada_plot)
 #australia daily cases plot
 aus_plot = '../images/aus_daily_cases.png'
@@ -163,6 +165,7 @@ e = aus_covid[aus_date_col]
 f = aus_covid['confirmed']
 fig, ax = plt.subplots(figsize=(6,4))
 daily_case_bar(aus_covid, e, f, '#1A89F4', 'Australia COVID-19 Daily Cases', 'Australia', ax)
+plt.setp(ax.xaxis.get_minorticklabels(), rotation=90, ha='center')
 image_of_plot(aus_plot)
 #new zealand daily cases plot
 nz_plot = '../images/nz_daily_cases.png'
@@ -170,6 +173,7 @@ x = nz_covid_total[nz_date_col]
 y = nz_covid_total['Daily_conf']
 fig, ax = plt.subplots(figsize=(6,4))
 daily_case_bar(nz_covid_total, x, y, 'black', 'New Zealand COVID-19 Daily Cases', 'New Zealand', ax)
+plt.setp(ax.xaxis.get_minorticklabels(), rotation=90, ha='center')
 image_of_plot(nz_plot)
 #colorado daily cases plot
 colorado_plot = '../images/colorado_daily_cases.png'
@@ -177,6 +181,7 @@ g = co_covid[us_case_date_col]
 h = co_covid['new_case']
 fig, ax = plt.subplots(figsize=(6,4))
 daily_case_bar(co_covid, g, h, 'm', 'Colorado COVID-19 Daily Cases', 'Colorado', ax)
+plt.setp(ax.xaxis.get_minorticklabels(), rotation=90, ha='center')
 image_of_plot(colorado_plot)
 
 #plot with four countries
