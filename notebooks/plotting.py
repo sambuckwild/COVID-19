@@ -9,6 +9,7 @@ from matplotlib.ticker import NullFormatter
 from matplotlib.dates import MonthLocator, DateFormatter
 
 from data_munging import *
+from analysis import *
 
 '''Plotting functions'''
 
@@ -59,6 +60,28 @@ def daily_case_bar_proportional(df, dates, daily_cases, clr, title, lbl, ax, x_l
     ax.tick_params(axis='x', which='major', length=17, width=1, labelsize=1)
     ax.tick_params(axis='x', which='minor', length=3, width=1, labelsize='medium')
     ax.legend()
+
+def freq_plot(c1_dist, c1_clr, c1_label, c2_dist, c2_clr, c2_label, c3_dist, c3_clr, c3_label, 
+c4_dist, c4_clr, c4_label, ax, title, x_label, y_label, x):
+    '''Inputs: c1_dist, c2_dist, c3_dist, c4_dist - countries' normal approximated distribution
+               c1_clr, c2_clr, c3_clr, c4_clr - countries' color for line on plot (string)
+               cl_label, c2_label, c3_label, c4_label - string label for country on plot
+               ax - axes to put figure on
+               title - string of title for plot
+               x_label - string of label for x axis
+               y_label - string of label for y axis
+               x - numpy array to plot distributions over
+        Plots a graph with all four countries' frequency distributions for comparison
+        Output: plot'''
+    ax.plot(x, c1_dist.pdf(x), color=c1_clr, label = c1_label, linewidth=1.5)
+    ax.plot(x, c2_dist.pdf(x), color=c2_clr, label=c2_label, linewidth=1.5)
+    ax.plot(x, c3_dist.pdf(x), color=c3_clr, label=c3_label, linewidth=1.5)
+    ax.plot(x, c4_dist.pdf(x), color=c4_clr, label=c4_label, linewidth=1.5)
+    ax.set_xlabel(x_label, fontsize=14)
+    ax.set_ylabel(y_label, fontsize=14)
+    ax.set_title(title, fontsize=16)
+    ax.legend()
+
 
 def image_of_plot(file):
     '''Input: file - file path for image (string)
@@ -229,3 +252,12 @@ if __name__ == '__main__':
     # 'black', 'Proportional Comparison of COVID-19 Daily Deaths', 'New Zealand', ax,'\nDate',
     # '# COVID-19 Deaths per 100,000 people')
     # image_of_plot(merge_plot_9)
+
+    '''plot of four countries' frequencies of deaths per cases'''
+    freq_plot_1 = '../images/frequency_plot.svg'
+    x=np.linspace(-5, 90, num=250)
+    fig, ax = plt.subplots(figsize=(10,6))
+    freq_plot(us_norm_dist, '#FBC00C', 'United States', can_norm_dist, '#A62205', 'Canada', aus_norm_dist, 
+    '#1A89F4', 'Australia', nz_norm_dist, 'black', 'New Zealand', ax, 
+    'Comparing Country Probability of Death due to COVID-19 Infection', 'Probability', 'Density', x=x)
+    image_of_plot(freq_plot_1)

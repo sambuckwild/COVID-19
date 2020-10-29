@@ -333,13 +333,14 @@ if __name__ == '__main__':
 
     #create new column in colorado dataframe to make it proportional to population
     co_covid = new_proportional_cols(co_covid, ['CO_Daily_prop'], [co_pop], ['new_case'])
+    co_covid = new_proportional_cols(co_covid, ['CO_Daily_deaths_prop'], [co_pop], ['new_death'])
     # print(co_covid.info())
     df_to_csv(co_covid, co_data_file)
 
     #create new columns in death merged df for cases/population to make them proportional
     new_death_lst = ['Aus_Daily_prop', 'NZ_Daily_prop', 'Canada_Daily_prop', 'US_Daily_prop']
     col_death_lst = ['Aus_Daily_Deaths', 'NZ_Daily_Deaths', 'Canada_Daily_Deaths', 'US_Daily_Deaths']
-    prop_deaht_lst = [aus_pop, nz_pop, can_pop, us_pop]
-    deaths_merge = new_proportional_cols(deaths_merge, new_death_lst, prop_deaht_lst, col_death_lst)
+    prop_death_lst = [aus_pop, nz_pop, can_pop, us_pop]
+    deaths_merge = new_proportional_cols(deaths_merge, new_death_lst, prop_death_lst, col_death_lst)
     # print(deaths_merge.info())
     df_to_csv(deaths_merge, deaths_merge_file)
