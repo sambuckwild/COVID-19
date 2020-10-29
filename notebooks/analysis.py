@@ -89,24 +89,25 @@ if __name__ == '__main__':
     nz_p = death_frequency(nz_total_prop_death, nz_total_prop)
     # print(us_p, can_p, aus_p, nz_p)
 
-    #calculate shared frequency and plot normal distribution with country x - US
+    #calculate shared frequency and plot normal distribution with country US - x 
+    #since the skeptic would say US <= country x
     mu = 0
-    shared_p_can_us = shared_frequency(can_total_prop_death, us_total_prop_death, can_total_prop, us_total_prop)
-    std_can_us = shared_std(shared_p_can_us, can_total_prop, us_total_prop)
+    shared_p_can_us = shared_frequency(us_total_prop_death, can_total_prop_death, us_total_prop, can_total_prop)
+    std_can_us = shared_std(shared_p_can_us, us_total_prop, can_total_prop)
     diff_norm_can_us = stats.norm(0, std_can_us) #normal distribution of the differences in frequencies
-    shared_p_aus_us = shared_frequency(aus_total_prop_death, us_total_prop_death, aus_total_prop, us_total_prop)
-    std_aus_us = shared_std(shared_p_aus_us, aus_total_prop, us_total_prop)
+    shared_p_aus_us = shared_frequency(us_total_prop_death, aus_total_prop_death, us_total_prop, aus_total_prop)
+    std_aus_us = shared_std(shared_p_aus_us, us_total_prop, aus_total_prop)
     diff_norm_aus_us = stats.norm(0, std_aus_us) 
-    shared_p_nz_us = shared_frequency(nz_total_prop_death, us_total_prop_death, nz_total_prop, us_total_prop)
-    std_nz_us = shared_std(shared_p_nz_us, nz_total_prop, us_total_prop)
+    shared_p_nz_us = shared_frequency(us_total_prop_death,nz_total_prop_death, us_total_prop, nz_total_prop)
+    std_nz_us = shared_std(shared_p_nz_us, us_total_prop, nz_total_prop)
     diff_norm_nz_us = stats.norm(0, std_nz_us) 
 
     #calculate p_value for difference in frequencies for hypothesis test
-    diff_freq_can_us = diff_frequencies(can_p, us_p)
+    diff_freq_can_us = diff_frequencies(us_p, can_p)
     p_value_can_us = p_value(diff_norm_can_us, diff_freq_can_us)
-    diff_freq_aus_us = diff_frequencies(aus_p, us_p)
+    diff_freq_aus_us = diff_frequencies(us_p, aus_p)
     p_value_aus_us = p_value(diff_norm_aus_us, diff_freq_aus_us)
-    diff_freq_nz_us = diff_frequencies(nz_p, us_p)
+    diff_freq_nz_us = diff_frequencies(us_p, nz_p)
     p_value_nz_us = p_value(diff_norm_nz_us, diff_freq_nz_us)
     # print(diff_freq_can_us, p_value_can_us)
     # print(diff_freq_aus_us, p_value_aus_us)

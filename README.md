@@ -63,9 +63,9 @@ Based on the plots, the daily number of deaths was more comparable at the first 
 
 Has the United States handled the pandemic poorly compared to Canada, Australia and New Zealand?  
 <br>
-I performed a hypothesis test utilizing the two sample approximate test of population frequencies.  
->  H<sub>0</sub> : Frequency of dying due to COVID-19 in US = Frequency of dying due to COVID-19 in "x" country  
-> H<sub>a</sub> : Frequency of dying due to COVID-19 in "x" country < Frequency of dying due to COVID-19 in US  
+I performed a hypothesis test utilizing the two sample approximate test of population frequencies to test whether someone is more likely to die from COVID-19 in the US compared to "x" country.  
+>  H<sub>0</sub> : Frequency of dying due to COVID-19 in US &le; Frequency of dying due to COVID-19 in "x" country  
+> H<sub>a</sub> : Frequency of dying due to COVID-19 in "x" country > Frequency of dying due to COVID-19 in US  
 
 | **Country**        | **Frequency of Death due to COVID-19 per 100,000 people** | **Total # COVID-19 Cases per 100,000 [through 10/12/2020]**| **Total # Deaths due to COVID-19 per 100,000 people [through 10/26/20]** |
 | :----------------: | :------------------------: | :------------------------------------------: | :--------: |
