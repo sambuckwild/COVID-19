@@ -144,16 +144,17 @@ if __name__ == '__main__':
     us_covid = change_to_datetime(us_covid, us_case_date_col, day1=False)
     us_covid = fill_nan(us_covid)
 
-    #create us covid demographic dataframe
-    us_covid_demo = create_dataframe_csv(us_file_demo_tests)
-    us_covid_demo = drop_columns(us_covid_demo, us_demo_drop_cols)
-    us_covid_demo = change_to_datetime(us_covid_demo, us_demo_date_col, day1=False)
-    us_covid_demo = fill_nan(us_covid_demo)
-    us_covid_demo = rename_columns(us_covid_demo, us_demo_new_col)
+    #create us covid demographic dataframe - MVP +
+    # us_covid_demo = create_dataframe_csv(us_file_demo_tests)
+    # us_covid_demo = drop_columns(us_covid_demo, us_demo_drop_cols)
+    # us_covid_demo = change_to_datetime(us_covid_demo, us_demo_date_col, day1=False)
+    # us_covid_demo = fill_nan(us_covid_demo)
+    # us_covid_demo = rename_columns(us_covid_demo, us_demo_new_col)
 
     #create revised us covid dataframe with totals from all states for each day & save to new csv file
     us_covid_total = groupby_df_sum(us_covid, us_groupby_col)
     us_covid_total = sort_df_by_date(us_covid_total, us_case_date_col)
+    # print(us_covid_total.info())
     df_to_csv(us_covid_total, us_total_file)
 
     '''Colorado Data'''
@@ -165,6 +166,7 @@ if __name__ == '__main__':
     #create colorado dataframe from us dataframe & save to new csv file
     co_covid = new_df_column_value(us_covid, state_col, state_val)
     co_covid = sort_df_by_date(co_covid, us_case_date_col)
+    # print(co_covid.info())
     df_to_csv(co_covid, co_data_file)
 
     '''Canada Data'''
@@ -173,7 +175,7 @@ if __name__ == '__main__':
                     'ratedeaths_last14', 'avgtotal_last7', 'avgincidence_last7', 
                     'percentdeath', 'percentactive', 'avgdeaths_last7', 'avgratedeaths_last7', 
                     'percentrecover', 'ratetested', 'percentoday', 'ratetotal',
-                    'ratedeaths', 'numdeathstoday', 'numtestedtoday', 'numrecoveredtoday', 
+                    'ratedeaths', 'numtestedtoday', 'numrecoveredtoday', 
                     'rateactive', 'pruid']
     can_date_col = 'date'
     pr_col = 'prname'
@@ -191,6 +193,7 @@ if __name__ == '__main__':
     canada_covid_total = new_df_column_value(canada_covid, pr_col, pr_col_value)
     canada_covid_total = groupby_df_sum(canada_covid_total, can_groupby_col)
     canada_covid_total = sort_df_by_date(canada_covid_total, can_date_col)
+    # print(canada_covid_total.info())
     df_to_csv(canada_covid_total, canada_total_file)
 
     '''Australia Data'''
@@ -203,6 +206,7 @@ if __name__ == '__main__':
     aus_covid = change_to_datetime(aus_covid, aus_date_col, day1=False)
     aus_covid = fill_nan(aus_covid)
     aus_covid = sort_df_by_date(aus_covid, aus_date_col)
+    # print(aus_covid.info())
     df_to_csv(aus_covid, aus_new_file)
 
     '''New Zealand Data'''
@@ -230,6 +234,7 @@ if __name__ == '__main__':
     #create total nz dataframe and save to csv
     nz_covid_total = groupby_df_sum(nz_covid, nz_groupby_col)
     nz_covid_total = sort_df_by_date(nz_covid_total, nz_date_col)
+    # print(nz_covid_total.info())
     df_to_csv(nz_covid_total, nz_new_file)
 
 
@@ -244,6 +249,18 @@ if __name__ == '__main__':
     ausnzcan_cols = ['Aus_Date', 'Aus_Daily_Cases', 'NZ_Daily_Cases', 'Canada_Daily_Cases']
     us_cols = ['submission_date', 'new_case']
     full_merge_cols = {'submission_date': 'US_Date', 'new_case': 'US_Daily_Totals'}
+    merge_file = '../data/merge_daily_cases.csv'
+
+    nz_death_cols = ['Date', 'daily_death']
+    aus_death_cols = ['date', 'deaths']
+    aus_nz_death_cols = {'date': 'Aus_Date','Date': 'NZ_Date','deaths': 'Aus_Daily_Deaths','daily_death': 'NZ_Daily_Deaths'}
+    can_death_cols = ['date', 'numdeathstoday']
+    ausnz_death_cols = ['Aus_Date', 'Aus_Daily_Deaths', 'NZ_Daily_Deaths']
+    ausnz_can_death_cols = {'date': 'Canada_Date', 'numdeathstoday': 'Canada_Daily_Deaths'}
+    ausnzcan_death_cols = ['Aus_Date', 'Aus_Daily_Deaths', 'NZ_Daily_Deaths', 'Canada_Daily_Deaths']
+    us_death_cols = ['submission_date', 'new_death']
+    full_merge_death_cols = {'submission_date': 'US_Date', 'new_death': 'US_Daily_Deaths'}
+    deaths_merge_file = '../data/merge_daily_deaths.csv'
 
     #merge aus and nz first
     aus_nz_covid = merge_df_daily_cases(aus_covid, nz_covid_total, aus_cols, nz_cols, aus_date_col, nz_date_col)
@@ -266,6 +283,28 @@ if __name__ == '__main__':
     covid_merge = drop_columns(covid_merge, ['US_Date'])
     covid_merge = rename_columns(covid_merge, {'Aus_Date': 'Date'})
     covid_merge = change_to_datetime(covid_merge, 'Date', day1=False)
+    # print(covid_merge.info())
+
+    #merge four dataframes again but with deaths column this time
+    aus_nz_deaths = merge_df_daily_cases(aus_covid, nz_covid_total, aus_death_cols, nz_death_cols, aus_date_col, nz_date_col)
+    aus_nz_deaths = rename_columns(aus_nz_deaths, aus_nz_death_cols)
+    aus_nz_deaths = sort_df_by_date(aus_nz_deaths, ausnz_date_col)
+    aus_nz_deaths = fill_nan(aus_nz_deaths)
+    aus_nz_deaths = drop_columns(aus_nz_deaths, ['NZ_Date'])
+    aus_nz_deaths = merge_df_daily_cases(aus_nz_deaths, canada_covid_total, ausnz_death_cols, can_death_cols, ausnz_date_col, can_date_col)
+    ausnz_can_deaths = rename_columns(aus_nz_deaths, ausnz_can_death_cols)
+    ausnz_can_deaths = sort_df_by_date(aus_nz_deaths, ausnz_date_col)
+    ausnz_can_deaths = fill_nan(aus_nz_deaths)
+    ausnz_can_deaths = drop_columns(aus_nz_deaths, ['Canada_Date'])
+    deaths_merge = merge_df_daily_cases(aus_nz_deaths, us_covid_total, ausnzcan_death_cols, us_death_cols, ausnz_date_col, us_case_date_col)
+    deaths_merge = rename_columns(deaths_merge, full_merge_death_cols)
+    deaths_merge = sort_df_by_date(deaths_merge, 'US_Date').reset_index(drop=True)
+    deaths_merge = fill_nan(deaths_merge)
+    deaths_merge.iloc[0:3, 0] = deaths_merge.iloc[0:3, 4]
+    deaths_merge = drop_columns(deaths_merge, ['US_Date'])
+    deaths_merge = rename_columns(deaths_merge, {'Aus_Date': 'Date'})
+    deaths_merge = change_to_datetime(deaths_merge, 'Date', day1=False)
+    # print(deaths_merge.info())
 
     '''creating proportional data between four countries using population density'''
     us_pop = 331002651/100000 #population per 100,000 people
@@ -289,6 +328,18 @@ if __name__ == '__main__':
     col_lst = ['Aus_Daily_Cases', 'NZ_Daily_Cases', 'Canada_Daily_Cases', 'US_Daily_Totals']
     prop_lst = [aus_pop, nz_pop, can_pop, us_pop]
     covid_merge = new_proportional_cols(covid_merge, new_lst, prop_lst, col_lst)
+    # print(covid_merge.info())
+    df_to_csv(covid_merge, merge_file)
 
     #create new column in colorado dataframe to make it proportional to population
     co_covid = new_proportional_cols(co_covid, ['CO_Daily_prop'], [co_pop], ['new_case'])
+    # print(co_covid.info())
+    df_to_csv(co_covid, co_data_file)
+
+    #create new columns in death merged df for cases/population to make them proportional
+    new_death_lst = ['Aus_Daily_prop', 'NZ_Daily_prop', 'Canada_Daily_prop', 'US_Daily_prop']
+    col_death_lst = ['Aus_Daily_Deaths', 'NZ_Daily_Deaths', 'Canada_Daily_Deaths', 'US_Daily_Deaths']
+    prop_deaht_lst = [aus_pop, nz_pop, can_pop, us_pop]
+    deaths_merge = new_proportional_cols(deaths_merge, new_death_lst, prop_deaht_lst, col_death_lst)
+    # print(deaths_merge.info())
+    df_to_csv(deaths_merge, deaths_merge_file)
