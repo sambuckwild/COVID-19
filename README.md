@@ -5,7 +5,11 @@ If the United States had universal public healthcare and a better pandemic plan/
 
 ## Background + Motivation   
 
+SARS-CoV-2 is a viral infectious disease that has caused a global pandemic all of 2020. It is thought to have originated in China, and then spread to almost every country on the planet. This pandemic has shown a light on the need for better public health infrastructure and planning. I chose to compare the United States to Canada, Australia, and New Zealand because of the main differences in these country's approaches to handling the pandemic and in their healthcare system.<br>  
 
+Canada, Australia and New Zealand all have universal healthcare coverage and they all were prepared with updated pandemic plans and guidelines inplace if a public health emergency were to occur. A major part of their plans that helped with the response was identifying the large need for priamry care providers in a public health crisis. Comparatively, the United States does not have universal healthcare--meaning not every one could go to the doctor for suspicion of having the infection until the government passed an order it was free for everyone--and they did have a National Council set up with an updated plan in 2017 for a pandemic response but the council was disbanded in 2018 leaving the United States at risk if a pandemic were to occur. [References 1 & 2](#references) <br>  
+
+I wanted to explore the daily case numbers and deaths between the four countries to determine if the United States was truly at a higher risk from the COVID-19 pandemic. 
 
 ## Raw Data + Data Cleaning  
 
@@ -137,7 +141,8 @@ Even though the plot made it look like the death rate was much worse in the Unit
 |    New Zealand     |              0.019       |                       23.9                   |      0.46    |
 <br>  
 > Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported.<br>   
-> [References](#reference-list) 
+
+[References #3](#reference-list) 
 
 ## Future Steps   
 
