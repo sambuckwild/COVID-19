@@ -137,12 +137,12 @@ Due to the p-values from each test with &alpha; = 0.10, I was not able to reject
 
 Even though the plot made it look like the death rate was much worse in the United States, this conclusion makes sense when you look at the proportional frequency of death for each country as they are very close to each other.
 
-| **Country**        | **Frequency of Death due to COVID-19 per 100,000 people** | **Total # COVID-19 Cases per 100,000 [through 10/12/2020]**| **Total # Deaths due to COVID-19 per 100,000 people [through 10/26/20]** |
+| **Country**        | **Frequency of Death due to COVID-19 per 100,000 people** | **Total # Deaths due to COVID-19 per 100,000 people [through 10/26/20]**| **Total # COVID-19 Cases per 100,000 [through 10/12/2020]** |
 | :----------------: | :------------------------: | :------------------------------------------: | :--------: |
-|   United States    |          0.029        |                     2352.7                   |      67.85     |
-|       Canada       |           0.054     |                      484.4                  |          25.95 |
-|     Australia      |             0.033        |                      107.0                   |     3.55   |
-|    New Zealand     |              0.019       |                       23.9                   |      0.46    |
+|   United States    |          0.029        |                     67.85                   |    2352.7     |
+|       Canada       |           0.054     |                      25.95                |        484.4  |
+|     Australia      |             0.033        |                     3.55                    |   107.0  |
+|    New Zealand     |              0.019       |                     0.46                    |     23.9    |
 <br>   
 
 > Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported.<br>   
@@ -157,7 +157,7 @@ Future analysis could be:
 -  Hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries   
 - Compare demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection   
 - Determine which country had the most expenditures relating to the pandemic   
--  Re-analyze the daily case rate spikes/distributions compared to government orders, stay-at-home, social distancing measures, etc. 
+-  Re-analyze the daily case rate spikes/distributions compared to government orders: stay-at-home, social distancing measures, etc. 
 
 ## Reference List   
 
