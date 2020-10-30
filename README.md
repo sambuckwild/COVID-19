@@ -136,13 +136,14 @@ Even though the plot made it look like the death rate was much worse in the Unit
 |     Australia      |             0.033        |                      107.0                   |     3.55   |
 |    New Zealand     |              0.019       |                       23.9                   |      0.46    |
 <br>  
-> Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported. see [References](#references) 
+> Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported.<br>   
+> [References](#reference-list) 
 
 ## Future Steps   
 
 Future analysis could be a hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries, comparing demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection, and to see which country had the most expenditures relating to the pandemic. 
 
-## References   
+## Reference List   
 
 1. [COVID-19 and primary care in six countries](https://bjgpopen.org/content/bjgpoa/early/2020/09/08/bjgpopen20X101128.full.pdf)  
 
