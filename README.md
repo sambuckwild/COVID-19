@@ -177,7 +177,8 @@ In conclusion, the United States did manage the outbreak and infection rate of t
 Future analysis could be:   
 - Compare demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection   
 - Determine which country had the most expenditures relating to the pandemic   
--  Re-analyze the daily case rate spikes/distributions compared to government orders such as stay-at-home, social distancing measures, travel bans, etc. 
+- Re-analyze the daily case rate spikes/distributions compared to government orders such as stay-at-home, social distancing measures, travel bans, etc.   
+- Compare New Zealand to the state of Colorado along the same comparisons hightlighted above due to both locations having similar population size and square kilometer areas
 
 ## Reference List   
 
