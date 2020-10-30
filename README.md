@@ -3,7 +3,9 @@
 If the United States had universal public healthcare and a better pandemic plan/public health system like Canada, Australia, and New Zealand, would the United States have done better with managing the pandemic?  
 
 
-# Background + Motivation
+# Background + Motivation   
+
+
 
 # Raw Data + Data Cleaning  
 
@@ -133,10 +135,17 @@ Even though the plot made it look like the death rate was much worse in the Unit
 |       Canada       |           0.054     |                      484.4                  |          25.95 |
 |     Australia      |             0.033        |                      107.0                   |     3.55   |
 |    New Zealand     |              0.019       |                       23.9                   |      0.46    |
-<br>
+<br>  
+> Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported. [see [reference](#References) 1]
 
 # Future Steps   
 
 Future analysis could be a hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries, comparing demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection, and to see which country had the most expenditures relating to the pandemic. 
 
-# References
+# References   
+
+1. [COVID-19 and primary care in six countries](https://bjgpopen.org/content/bjgpoa/early/2020/09/08/bjgpopen20X101128.full.pdf)  
+
+2. [Public Health's Critical Role in Health Reform in the United States](https://www.apha.org/policies-and-advocacy/public-health-policy-statements/policy-database/2014/07/23/11/50/public-healths-critical-role-in-health-reform-in-the-united-states)   
+
+3. [Time between Symptom Onset, Hospitalisation and Recovery or Death: a Statistical Analysis of Different Time-Delay Distributions in Belgian COVID-19 Patients](https://www.medrxiv.org/content/10.1101/2020.07.18.20156307v1)
