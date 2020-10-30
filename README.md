@@ -9,9 +9,9 @@ If the United States had universal public healthcare and a better pandemic plan/
 
 ## Background + Motivation   
 
-SARS-CoV-2 is a viral infectious disease that has caused a global pandemic all of 2020. It is thought to have originated in China, and then spread to almost every country on the planet. This pandemic has shown a light on the need for better public health infrastructure and planning. I chose to compare the United States to Canada, Australia, and New Zealand because of the main differences in these country's approaches to handling the pandemic and in their healthcare system.<br>  
+SARS-CoV-2 is a viral infectious disease that has caused a global pandemic all of 2020. It is thought to have originated in China, and then spread to almost every country on the planet. This pandemic has shown a light on the need for better public health infrastructure and planning. I chose to compare the United States to Canada, Australia, and New Zealand because of the main differences in these country's approaches to handling the pandemic and in their healthcare systems.<br>  
 
-Canada, Australia and New Zealand all have universal healthcare coverage and they all were prepared with updated pandemic plans and guidelines inplace if a public health emergency were to occur. A major part of their plans that helped with the response was identifying the large need for priamry care providers in a public health crisis. Comparatively, the United States does not have universal healthcare--meaning not every one could go to the doctor for suspicion of having the infection until the government passed an order it was free for everyone--and they did have a National Council set up with an updated plan in 2017 for a pandemic response but the council was disbanded in 2018 leaving the United States at risk if a pandemic were to occur. [References 1 & 2](#references) <br>  
+Canada, Australia and New Zealand all have universal healthcare coverage and they all were prepared with updated pandemic plans and guidelines inplace if a public health emergency were to occur. A major part of their plans that helped with the response was identifying the large need for priamry care providers in a public health crisis. Comparatively, the United States does not have universal healthcare--meaning not every one could go to the doctor for suspicion of having the infection until the government passed an order making it free for everyone--and they did have a National Council set up with an updated plan in 2017 for a pandemic response but the council was disbanded in 2018 leaving the United States at risk if a pandemic were to occur. [References 1 & 2](#references) <br>  
 
 I wanted to explore the daily case numbers and deaths between the four countries to determine if the United States was truly at a higher risk from the COVID-19 pandemic. 
 
@@ -35,7 +35,7 @@ The initial data for all four countries was obtained from multiple sources, then
 
 #### Cleaned + Merged Dataframe: Daily COVID-19 Cases    
 
-The date and daily cases column from each country's cleaned dataframe was selected and renamed as I merged each dataframe together. An outer join was used so as not to miss any data from country's that started tracking cases earlier than others, thus had more dates listed compared to others. The weighted (proportional) columns were calculated with the daily cases column divided by the country's population divided by 100,000 so it is now a value of daily cases per 100,000 people in that country.
+The date and daily cases column from each country's cleaned dataframe was selected and renamed as I merged each dataframe together. An outer join was used so as not to miss any data from countries that started tracking cases earlier than others, thus had more dates listed compared to others. The weighted (proportional) columns were calculated with the daily cases column divided by the country's population divided by 100,000 so it is now a value of daily cases per 100,000 people in that country.
 
 |    | Date    | Aus_Daily_Cases | NZ_Daily_Cases | Canada_Daily_Cases | US_Daily_Totals | Aus_Daily_prop | NZ_Daily_prop | Canada_Daily_prop | US_Daily_prop |
 |----|---------|-----------------|----------------|--------------------|-----------------|----------------|---------------|-------------------|---------------|
@@ -98,7 +98,7 @@ Next, I wanted to compare the deaths due to COVID-19 in the four countries. Agai
 ![](images/four_merge_daily_death_proportional.svg)   
 <font size ="-1">*Figure 4: Comparing United States, Canada, Australia + New Zealand daily death count due to COVID-19 per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
 
-Based on the plots, the daily number of deaths was more comparable at the first wave of the pandemic between at least the US and Canada; however, the US still looks to have had more deaths proportionally compared to the other three countries. This is shown in the following two tables that show the total number of COVID-19 cases and deaths for each country, along with the weighted total for each country.  
+Based on the plots, the daily number of deaths was more comparable at the first wave of the pandemic between at least the US and Canada; however, the US appears to have had more deaths proportionally compared to the other three countries. This is shown in the following two tables that illustrate the total number of COVID-19 cases and deaths for each country, along with the weighted total for each country.  
 
 <div align="center">  
 
@@ -123,8 +123,7 @@ Based on the plots, the daily number of deaths was more comparable at the first 
 <div align="left">  
 
 ## Analysis
-
-#### Has the United States handled the pandemic poorly compared to Canada, Australia and New Zealand?  
+ 
 I performed a hypothesis test to determine whether someone is more likely to die from a COVID-19 infection in the United States compared to "x" country.   
 
 >  H<sub>0</sub> : Probability of dying due to COVID-19 in US &le; Probability of dying due to COVID-19 in "x" country  
@@ -148,6 +147,8 @@ Even though the plot made it look like the death rate was much worse in the Unit
 > Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported.<br>   
 
 [References #3](#reference-list) 
+
+
 
 ## Future Steps   
 
