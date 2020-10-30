@@ -157,7 +157,7 @@ Future analysis could be:
 -  Hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries   
 - Compare demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection   
 - Determine which country had the most expenditures relating to the pandemic   
--  Re-analyze the daily case rate spikes/distributions compared to government orders: stay-at-home, social distancing measures, etc. 
+-  Re-analyze the daily case rate spikes/distributions compared to government orders such as stay-at-home, social distancing measures, travel bans, etc. 
 
 ## Reference List   
 
