@@ -3,7 +3,6 @@
 ![](images/coronavirus_image_thin.jpg)  
 [source](https://www.nga.org/coronavirus/)
 
-https://www.nga.org/coronavirus/
 ## Project Question/Goal
 If the United States had universal public healthcare and a better pandemic plan/public health system like Canada, Australia, and New Zealand, would the United States have done better with managing the pandemic?  
 
