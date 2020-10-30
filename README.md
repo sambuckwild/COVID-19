@@ -154,9 +154,11 @@ I performed a second hypothesis test to determine whether someone is more likely
 >  H<sub>0</sub> : Probability of getting infected with COVID-19 in US &le; Probability of getting infected with COVID-19 in "x" country  
 > H<sub>a</sub> : Probability of getting infected with  COVID-19 in US > Probability of getting infected with  COVID-19 in "x" country<br>  
 
-Due to the p-values from each test with &alpha; = 0.05, I was able to reject the null hypothesis; thus, there is a significant difference in the probability of contracting a COVID-19 infection in the United States comapred to Canada, Australia, or New Zealand.   
-> p-value for H<sub>0</sub> US Probability &le; Canada Probability: 0.00 (too small for the code to return a number) 
-> p-value for H<sub>0</sub> US Probability &le; Australia Probability: 0.00  (too small for the code to return a number) 
+Due to the p-values from each test with &alpha; = 0.05, I was able to reject the null hypothesis; thus, there is a significant difference in the probability of contracting a COVID-19 infection in the United States compared to Canada, Australia, or New Zealand.   
+> p-value for H<sub>0</sub> US Probability &le; Canada Probability: 0.00 (too small for the code to return a number)  
+
+> p-value for H<sub>0</sub> US Probability &le; Australia Probability: 0.00  (too small for the code to return a number)   
+
 > p-value for H<sub>0</sub> US Probability &le; New Zealand Probability: 0.00  (too small for the code to return a number) 
 
 | **Country**        | **Frequency Positive COVID-19 Tests per 100,000 people** | **Total # of positive COVID-19 tests per 100,000 people (cases)**| **Total # COVID-19 tests per 100,000 people** |
