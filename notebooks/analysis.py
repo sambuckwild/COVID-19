@@ -91,7 +91,6 @@ if __name__ == '__main__':
 
     #calculate shared frequency and plot normal distribution with country US - x 
     #since the skeptic would say US <= country x
-    mu = 0
     shared_p_can_us = shared_frequency(us_total_prop_death, can_total_prop_death, us_total_prop, can_total_prop)
     std_can_us = shared_std(shared_p_can_us, us_total_prop, can_total_prop)
     diff_norm_can_us = stats.norm(0, std_can_us) #normal distribution of the differences in frequencies
@@ -111,7 +110,7 @@ if __name__ == '__main__':
     p_value_nz_us = p_value(diff_norm_nz_us, diff_freq_nz_us)
     # print(diff_freq_can_us, p_value_can_us)
     # print(diff_freq_aus_us, p_value_aus_us)
-    # print(diff_freq_nz_us, p_value_can_us)
+    # print(diff_freq_nz_us, p_value_nz_us)
 
     #approximated normal distributions of frequency of deaths per cases 
     us_norm_dist = binom_approx_norm_dist(us_total_prop, us_p)
