@@ -1,6 +1,6 @@
 # Capstone_1
 # Project Question/Goal
-go with purpose: if the us had public health like Canada, Aus, NZ, would we have done better with managing the pandemic?  
+If the United States had universal public healthcare and a better pandemic plan/public health system like Canada, Australia, and New Zealand, would the United States have done better with managing the pandemic?  
 
 
 # Background + Motivation
