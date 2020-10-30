@@ -1,4 +1,4 @@
-# SARS-CoV-2 Around the World   
+# Comparing the COVID-19 Pandemic Between Countries With and Without Universal Public Healthcare 
 
 ![](images/coronavirus_image_thin.jpg)  
 [source](https://www.nga.org/coronavirus/)
@@ -9,7 +9,7 @@ If the United States had universal public healthcare and a better pandemic plan/
 
 ## Background + Motivation   
 
-SARS-CoV-2 is a viral infectious disease that has caused a global pandemic all of 2020. It is thought to have originated in China, and then spread to almost every country on the planet. This pandemic has shown a light on the need for better public health infrastructure and planning. I chose to compare the United States to Canada, Australia, and New Zealand because of the main differences in these country's approaches to handling the pandemic and in their healthcare systems.<br>  
+SARS-CoV-2 (COVID-19) is a viral infectious disease that has caused a global pandemic all of 2020. It is thought to have originated in China, and then spread to almost every country on the planet. This pandemic has shown a light on the need for better public health infrastructure and planning. I chose to compare the United States to Canada, Australia, and New Zealand because of the main differences in these country's approaches to handling the pandemic and in their healthcare systems.<br>  
 
 Canada, Australia and New Zealand all have universal healthcare coverage and they all were prepared with updated pandemic plans and guidelines inplace if a public health emergency were to occur. A major part of their plans that helped with the response was identifying the large need for priamry care providers in a public health crisis. Comparatively, the United States does not have universal healthcare--meaning not every one could go to the doctor for suspicion of having the infection until the government passed an order making it free for everyone--and they did have a National Council set up with an updated plan in 2017 for a pandemic response but the council was disbanded in 2018 leaving the United States at risk if a pandemic were to occur. [References 1 & 2](#references) <br>  
 
