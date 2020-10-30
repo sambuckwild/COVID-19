@@ -254,11 +254,11 @@ if __name__ == '__main__':
     # image_of_plot(merge_plot_9)
 
     '''plot of four countries' frequencies of deaths per cases'''
-    freq_plot_1 = '../images/frequency_plot.svg'
-    x=np.linspace(-5, 90, num=250)
-    fig, ax = plt.subplots(figsize=(10,6))
-    freq_plot(us_norm_dist, '#FBC00C', 'United States', can_norm_dist, '#A62205', 'Canada', aus_norm_dist, 
-    '#1A89F4', 'Australia', nz_norm_dist, 'black', 'New Zealand', ax, 
-    'Comparing Country Probability of Death due to COVID-19 Infection', 
-    '# Deaths due to COVID-19 per 100,000 people', 'Density', x=x)
-    image_of_plot(freq_plot_1)
+    # freq_plot_1 = '../images/frequency_plot.svg'
+    # x=np.linspace(-5, 90, num=250)
+    # fig, ax = plt.subplots(figsize=(10,6))
+    # freq_plot(us_norm_dist, '#FBC00C', 'United States', can_norm_dist, '#A62205', 'Canada', aus_norm_dist, 
+    # '#1A89F4', 'Australia', nz_norm_dist, 'black', 'New Zealand', ax, 
+    # 'Comparing Country Probability of Death due to COVID-19 Infection', 
+    # '# Deaths due to COVID-19 per 100,000 people', 'Density', x=x)
+    # image_of_plot(freq_plot_1)

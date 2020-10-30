@@ -1,6 +1,7 @@
 '''Code to create clean datasets'''
 from data_munging import *
 from plotting import *
+from analysis import *
 
 
 '''USA Data'''
