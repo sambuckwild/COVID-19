@@ -143,7 +143,7 @@ if __name__ == '__main__':
 
     '''plot with four countries'''
     # merge_plot_1 = '../images/four_merge_daily_cases.svg'
-    # fig, ax = plt.subplots(figsize=(12,8))
+    # fig, ax = plt.subplots(figsize=(11, 7))
     # daily_case_bar(us_covid_total, a, b, '#FBC00C', 'Comparison of COVID-19 Daily Cases: Four Countries', 
     # 'United States', ax,'\nDate','# COVID-19 Cases')
     # daily_case_bar(canada_covid_total, c, d, '#A62205', 'Comparison of COVID-19 Daily Cases: Four Countries', 
@@ -185,7 +185,7 @@ if __name__ == '__main__':
 
     '''plot with four countries + proportional data'''
     # merge_plot_5 = '../images/four_merge_daily_proportional.svg'
-    # fig, ax = plt.subplots(figsize=(10,6))
+    # fig, ax = plt.subplots(figsize=(11, 7))
     # daily_case_bar_proportional(covid_merge, covid_merge['Date'], covid_merge['US_Daily_prop'], '#FBC00C', 
     # 'Proportional Comparison of COVID-19 Daily Cases', 'United States', ax,'\nDate',
     # '# COVID-19 Cases per 100,000 people')
@@ -238,7 +238,7 @@ if __name__ == '__main__':
 
     '''plot with four countries daily death rate'''
     # merge_plot_9 = '../images/four_merge_daily_death_proportional.svg'
-    # fig, ax = plt.subplots(figsize=(10,6))
+    # fig, ax = plt.subplots(figsize=(11, 7))
     # daily_case_bar_proportional(deaths_merge, deaths_merge['Date'], deaths_merge['US_Daily_prop'], 
     # '#FBC00C', 'Proportional Comparison of COVID-19 Daily Deaths', 'United States', ax,'\nDate',
     # '# COVID-19 Deaths per 100,000 people')
