@@ -18,7 +18,8 @@ The initial data for all four countries was obtained from multiple sources, then
 | 16681 Rows             | 3418 Rows       | 277 Rows           |  4886 Rows           |
 | Split up by States by Date | Split up by Province By Date  | Split up by Date| Split up by Region by Date|
 | Retained 10 coulmns in cleaned dataframe|Retained 11 columns|Retained all 17 columns|Retained all 10 columns|
-| [United States data source](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36)| [Canada data source](https://open.canada.ca/data/en/dataset/261c32ab-4cfd-4f81-9dea-7b64065690dc)   |  [Australia data source](https://github.com/M3IT/COVID-19_Data/blob/master/Data/COVID_AU_national.csv)  | [New Zealand data source](https://nzcoviddashboard.esr.cri.nz/#!/)|   
+| [United States data source](https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36)| [Canada data source](https://open.canada.ca/data/en/dataset/261c32ab-4cfd-4f81-9dea-7b64065690dc)   |  [Australia data source](https://github.com/M3IT/COVID-19_Data/blob/master/Data/COVID_AU_national.csv)  | [New Zealand data source](https://nzcoviddashboard.esr.cri.nz/#!/)|  
+
 <font size ="-1">*Table 1: Features + sources for original datasets*</font><br><br>  
 
 
