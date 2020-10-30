@@ -35,6 +35,7 @@ The date and daily cases column from each country's cleaned dataframe was select
 | 53 | 3/15/20 | 48              | 1              | 54                 | 1237            | 0.18823615     | 0.020737281   | 0.143076095       | 0.373713019   |
 | 54 | 3/16/20 | 79              | 7              | 88                 | 755             | 0.309805331    | 0.145160966   | 0.233161043       | 0.22809485    |
 | 55 | 3/17/20 | 78              | 11             | 99                 | 2797            | 0.305883744    | 0.228110089   | 0.262306174       | 0.845008338   |   
+
 <font size ="-1">*Table 2: Five rows from cleaned + merged dataframe with country daily cases and weighted daily COVID-19 cases*</font><br><br>  
 
 
@@ -50,6 +51,7 @@ Similar to the daily cases dataframe, this was a merge of the cleaned countries'
 | 53 | 3/15/20 | 2                | 0               | 0                   | 16              | 0.007843173    | 0             | 0                 | 0.004833798   |
 | 54 | 3/16/20 | 0                | 0               | 3                   | 8               | 0              | 0             | 0.007948672       | 0.002416899   |
 | 55 | 3/17/20 | 0                | 0               | 3                   | 22              | 0              | 0             | 0.007948672       | 0.006646472   |   
+
 <font size ="-1">*Table 3: Five rows from cleaned + merged dataframe with country daily deaths and weighted daily deaths due to COVID-19*</font><br><br>  
 
 
@@ -61,7 +63,8 @@ After creating cleaned dataframes, I started exploring the data by looking at  d
 | ---------------------------- | -------------------------------- |
 |![](images/us_daily_cases.svg)|![](images/canada_daily_cases.svg)|
 |                              |                                  |
-|![](images/aus_daily_cases.svg)|![](images/nz_daily_cases.svg)   |   
+|![](images/aus_daily_cases.svg)|![](images/nz_daily_cases.svg)   |  
+   
 <font size ="-1">*Figure 1: Daily case incidence of COVID-19 for United States, Canada, Australia, and New Zealand* </font><br><br>
 
 Upon initial analysis of the y-axis (# of COVID-19 cases), it was clear the United States has had an overwhelmingly larger amount of COVID-19 cases compared to Canada, Australia and New Zealand.<br>   
