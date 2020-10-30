@@ -121,8 +121,8 @@ Based on the plots, the daily number of deaths was more comparable at the first 
 ## Analysis
 
 #### Has the United States handled the pandemic poorly compared to Canada, Australia and New Zealand?  
-I performed a hypothesis test test whether someone is more likely to die from a COVID-19 infection in the United States compared to "x" country.   
-  
+I performed a hypothesis test to determine whether someone is more likely to die from a COVID-19 infection in the United States compared to "x" country.   
+
 >  H<sub>0</sub> : Probability of dying due to COVID-19 in US &le; Probability of dying due to COVID-19 in "x" country  
 > H<sub>a</sub> : Probability of dying due to COVID-19 in US > Probability of dying due to COVID-19 in "x" country<br>  
 
