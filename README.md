@@ -64,7 +64,7 @@ After creating cleaned dataframes, I started exploring the data by looking at  d
 |![](images/us_daily_cases.svg)|![](images/canada_daily_cases.svg)|
 |                              |                                  |
 |![](images/aus_daily_cases.svg)|![](images/nz_daily_cases.svg)   |  
-   
+
 <font size ="-1">*Figure 1: Daily case incidence of COVID-19 for United States, Canada, Australia, and New Zealand* </font><br><br>
 
 Upon initial analysis of the y-axis (# of COVID-19 cases), it was clear the United States has had an overwhelmingly larger amount of COVID-19 cases compared to Canada, Australia and New Zealand.<br>   
@@ -72,17 +72,17 @@ Upon initial analysis of the y-axis (# of COVID-19 cases), it was clear the Unit
 To better visualize the direct comparisons, I plotted the four countries together. Due to the United States' highest daily count around 80,000 cases, however, it was hard to see the other three countries' data on the plot. 
 
 ![](images/four_merge_daily_cases.svg)   
-<font size ="-1">*Fig 1: Comparing United States, Canada, Australia + New Zealand daily incidence of COVID-19 cases; major ticks are beginning and end of each month, minor ticks are the 15th of each month.*</font><br><br>
+<font size ="-1">*Figure 2: Comparing United States, Canada, Australia + New Zealand daily incidence of COVID-19 cases; major ticks are beginning and end of each month, minor ticks are the 15th of each month.*</font><br><br>
 
 To be able to better compare the four countries, I created a new column in my merged dataframe with the value of daily cases per 100,000 people in each country (a weighted daily cases value). Shown below, with the new proportional data we can see more of each county's results; however, the United States is still far worse off on handling the pandemic compared to Canada, Australia and New Zealand. 
 
 ![](images/four_merge_daily_proportional.svg)   
-<font size ="-1">*Fig 2: Comparing United States, Canada, Australia + New Zealand daily incidence of COVID-19 cases per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
+<font size ="-1">*Figure 3: Comparing United States, Canada, Australia + New Zealand daily incidence of COVID-19 cases per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
 
 Next, I wanted to compare the deaths due to COVID-19 in the four countries. Again, I created a merged dataframe with proportional columns of daily deaths per 100,000 people for each country.  
 
 ![](images/four_merge_daily_death_proportional.svg)   
-<font size ="-1">*Fig 3: Comparing United States, Canada, Australia + New Zealand daily death count due to COVID-19 per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
+<font size ="-1">*Figure 4: Comparing United States, Canada, Australia + New Zealand daily death count due to COVID-19 per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
 
 Based on the plots, the daily number of deaths was more comparable at the first wave of the pandemic between at least the US and Canada; however, the US still looks to have had more deaths proportionally compared to the other three countries. This is shown in the following two tables that show the total number of COVID-19 cases and deaths for each country, along with the weighted total for each country.  
 
