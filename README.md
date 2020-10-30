@@ -36,7 +36,7 @@ To be able to better compare the four countries, I created a new column in my me
 
 Next, I wanted to compare the deaths due to COVID-19 in the four countries. Again, I created a merged dataframe with proportional columns of daily deaths per 100,000 people for each country.  
 
-![](images/four_merge_daily_death_proportional.svg) 
+![](images/four_merge_daily_death_proportional.svg)   
 <font size ="-2">*Fig 3: Comparing United States, Canada, Australia + New Zealand daily death count due to COVID-19 per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
 
 Based on the plots, the daily number of deaths was more comparable at the first wave of the pandemic between the US and Canada; however, the US still looks to have had more deaths proportionally compared to the other three countries. The following two tables show the total number of COVID-19 cases and deaths for each country, along with the weighted total for each country.  
