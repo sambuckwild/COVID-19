@@ -1,16 +1,16 @@
 # Capstone_1
-# Project Question/Goal
+## Project Question/Goal
 If the United States had universal public healthcare and a better pandemic plan/public health system like Canada, Australia, and New Zealand, would the United States have done better with managing the pandemic?  
 
 
-# Background + Motivation   
+## Background + Motivation   
 
 
 
-# Raw Data + Data Cleaning  
+## Raw Data + Data Cleaning  
 
 
-### Initial Data   
+#### Initial Data   
 
 The initial data for all four countries was obtained from multiple sources, then cleaned into new datasets and two merged datasets. The initial datasets contained daily case numbers, daily deaths, and information about the state/province, testing numbers (for some countries), and number of people recovered from infection. Initial data cleaning was dropping uneeded columns, renaming columns, filling NaN values, and setting the dates to datetime objects.  
 
@@ -25,7 +25,7 @@ The initial data for all four countries was obtained from multiple sources, then
 <font size ="-1">*Table 1: Features + sources for original datasets*</font><br><br>  
 
 
-### Cleaned + Merged Dataframe: Daily COVID-19 Cases    
+#### Cleaned + Merged Dataframe: Daily COVID-19 Cases    
 
 The date and daily cases column from each country's cleaned dataframe was selected and renamed as I merged each dataframe together. An outer join was used so as not to miss any data from country's that started tracking cases earlier than others, thus had more dates listed compared to others. The weighted (proportional) columns were calculated with the daily cases column divided by the country's population divided by 100,000 so it is now a value of daily cases per 100,000 people in that country.
 
@@ -41,7 +41,7 @@ The date and daily cases column from each country's cleaned dataframe was select
 <font size ="-1">*Table 2: Five rows from cleaned + merged dataframe with country daily cases and weighted daily COVID-19 cases*</font><br><br>  
 
 
-### Cleaned + Merged Dataframe: Daily Deaths due to COVID-19    
+#### Cleaned + Merged Dataframe: Daily Deaths due to COVID-19    
 
 Similar to the daily cases dataframe, this was a merge of the cleaned countries' dataframes on their daily death count columns along with a weighted daily death column using the country's population divided by 100,000.
 
@@ -57,7 +57,7 @@ Similar to the daily cases dataframe, this was a merge of the cleaned countries'
 <font size ="-1">*Table 3: Five rows from cleaned + merged dataframe with country daily deaths and weighted daily deaths due to COVID-19*</font><br><br>  
 
 
-# Exploratory Data Analysis
+## Exploratory Data Analysis
 
 After creating cleaned dataframes, I started exploring the data by looking at  daily case incidence of COVID-19 over the past ten months of the pandemic for each country. 
   
@@ -71,7 +71,7 @@ After creating cleaned dataframes, I started exploring the data by looking at  d
 
 Upon initial analysis of the y-axis (# of COVID-19 cases), it was clear the United States has had an overwhelmingly larger amount of COVID-19 cases compared to Canada, Australia and New Zealand.<br>   
 
-### Comparison of Daily COVID-19 Cases  
+#### Comparison of Daily COVID-19 Cases  
 
 To better visualize the direct comparisons, I plotted the four countries together. Due to the United States' highest daily count around 80,000 cases, however, it was hard to see the other three countries' data on the plot. 
 
@@ -83,7 +83,7 @@ To be able to better compare the four countries, I created a new column in my me
 ![](images/four_merge_daily_proportional.svg)   
 <font size ="-1">*Figure 3: Comparing United States, Canada, Australia + New Zealand daily incidence of COVID-19 cases per 100,000 people; major ticks are beginning and end of each month, minor ticks are the 15th of each month.* </font><br><br>
 
-### Comparison of Daily Deaths due to COVID-19  
+#### Comparison of Daily Deaths due to COVID-19  
 
 Next, I wanted to compare the deaths due to COVID-19 in the four countries. Again, I created a merged dataframe with proportional columns of daily deaths per 100,000 people for each country.  
 
@@ -114,9 +114,9 @@ Based on the plots, the daily number of deaths was more comparable at the first 
 <br>  
 <div align="left">  
 
-# Analysis
+## Analysis
 
-### Has the United States handled the pandemic poorly compared to Canada, Australia and New Zealand?  
+#### Has the United States handled the pandemic poorly compared to Canada, Australia and New Zealand?  
 <br>
 I performed a hypothesis test test whether someone is more likely to die from a COVID-19 infection in the United States compared to "x" country.  
 >  H<sub>0</sub> : Probability of dying due to COVID-19 in US &le; Probability of dying due to COVID-19 in "x" country  
@@ -136,13 +136,13 @@ Even though the plot made it look like the death rate was much worse in the Unit
 |     Australia      |             0.033        |                      107.0                   |     3.55   |
 |    New Zealand     |              0.019       |                       23.9                   |      0.46    |
 <br>  
-> Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported. [see [reference](#References) 1]
+> Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported. see [References](#references) 
 
-# Future Steps   
+## Future Steps   
 
 Future analysis could be a hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries, comparing demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection, and to see which country had the most expenditures relating to the pandemic. 
 
-# References   
+## References   
 
 1. [COVID-19 and primary care in six countries](https://bjgpopen.org/content/bjgpoa/early/2020/09/08/bjgpopen20X101128.full.pdf)  
 
