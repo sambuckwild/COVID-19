@@ -169,6 +169,8 @@ Due to the p-values from each test with &alpha; = 0.05, I was able to reject the
 |    New Zealand     |              0.00108      |                  23.9                   | 22240.6|
 <br>   
 
+In conclusion, the United States did manage the outbreak and infection rate of the COVID-19 pandemic poorly compared to Canada, Australia and New Zealand which could be due to their lack of a strong public health system and no universal healthcare coverage. However, the United States still has high quailty healthcare wihtout those services in place shown by no significant difference in death rates due to COVID-19 among the four countries. 
+
 
 ## Future Steps   
 
