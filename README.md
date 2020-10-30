@@ -67,7 +67,8 @@ Has the United States handled the pandemic poorly compared to Canada, Australia 
 <br>
 I performed a hypothesis test test whether someone is more likely to die from a COVID-19 infection in the United States compared to "x" country.  
 >  H<sub>0</sub> : Frequency of dying due to COVID-19 in US &le; Frequency of dying due to COVID-19 in "x" country  
-> H<sub>a</sub> : Frequency of dying due to COVID-19 in US > Frequency of dying due to COVID-19 in "x" country  
+> H<sub>a</sub> : Frequency of dying due to COVID-19 in US > Frequency of dying due to COVID-19 in "x" country<br>  
+  
 Due to the p-values from each test, I was not able to reject the null hypothesis or conclude that there is a significance difference in the probability of dying due to COVID-19 between the United States and Canada, Australia, or New Zealand. 
 
 | **Country**        | **Frequency of Death due to COVID-19 per 100,000 people** | **Total # COVID-19 Cases per 100,000 [through 10/12/2020]**| **Total # Deaths due to COVID-19 per 100,000 people [through 10/26/20]** |
