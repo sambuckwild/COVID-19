@@ -147,14 +147,30 @@ Even though the plot made it look like the death rate was much worse in the Unit
 
 > Note: For this analysis I created a third merged dataframe for daily COVID-19 cases with the last two weeks of data removed, before the total # cases was summed. This is due to research suggesting a common time frame from diagnosis (case reported) to death is about 6-12 days. So to be more accurate, the last 14 days of positive cases was removed as those would not have related to any deaths reported.<br>   
 
-[References #3](#reference-list) 
+[References #3](#reference-list) <br>   
 
+I performed a second hypothesis test to determine whether someone is more likely to contract a COVID-19 infection in the United States compared to "x" country.   
+
+>  H<sub>0</sub> : Probability of getting infected with COVID-19 in US &le; Probability of getting infected with COVID-19 in "x" country  
+> H<sub>a</sub> : Probability of getting infected with  COVID-19 in US > Probability of getting infected with  COVID-19 in "x" country<br>  
+
+Due to the p-values from each test with &alpha; = 0.05, I was able to reject the null hypothesis; thus, there is a significant difference in the probability of contracting a COVID-19 infection in the United States comapred to Canada, Australia, or New Zealand.   
+> p-value for H<sub>0</sub> US Probability &le; Canada Probability: 0.00 (too small for the code to return a number) 
+> p-value for H<sub>0</sub> US Probability &le; Australia Probability: 0.00  (too small for the code to return a number) 
+> p-value for H<sub>0</sub> US Probability &le; New Zealand Probability: 0.00  (too small for the code to return a number) 
+
+| **Country**        | **Frequency Positive COVID-19 Tests per 100,000 people** | **Total # of positive COVID-19 tests per 100,000 people (cases)**| **Total # COVID-19 tests per 100,000 people** |
+| :----------------: | :------------------------: | :------------------------------------------: | :--------: |
+|   United States    |          0.06243        |                     2603.3                   |   41697.6  |
+|       Canada       |           0.00028     |                       539.7                |        1932849.7  |
+|     Australia      |             0.00321        |                     107.9               | 33596.3 |
+|    New Zealand     |              0.00108      |                  23.9                   | 22240.6|
+<br>   
 
 
 ## Future Steps   
 
 Future analysis could be:   
--  Hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries   
 - Compare demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection   
 - Determine which country had the most expenditures relating to the pandemic   
 -  Re-analyze the daily case rate spikes/distributions compared to government orders such as stay-at-home, social distancing measures, travel bans, etc. 
@@ -165,4 +181,8 @@ Future analysis could be:
 
 2. [Public Health's Critical Role in Health Reform in the United States](https://www.apha.org/policies-and-advocacy/public-health-policy-statements/policy-database/2014/07/23/11/50/public-healths-critical-role-in-health-reform-in-the-united-states)   
 
-3. [Time between Symptom Onset, Hospitalisation and Recovery or Death: a Statistical Analysis of Different Time-Delay Distributions in Belgian COVID-19 Patients](https://www.medrxiv.org/content/10.1101/2020.07.18.20156307v1)
+3. [Time between Symptom Onset, Hospitalisation and Recovery or Death: a Statistical Analysis of Different Time-Delay Distributions in Belgian COVID-19 Patients](https://www.medrxiv.org/content/10.1101/2020.07.18.20156307v1)   
+
+4. [The COVID Tracking Project: US Historical Data](https://covidtracking.com/data/national)    
+
+5. [Ministry of Health: COVID-19: Testing data](https://prod.liveshare.vsengsaas.visualstudio.com/join?D89A47E945DC862AAEDB03EF270106CFE28E)

@@ -5,12 +5,12 @@ from plotting import *
 import scipy.stats as stats
 import numpy as np
 
-def death_frequency(total_death, total_cases):
+def death_case_frequency(total_death_case, total_cases):
     '''Inputs: total_death - total # covid deaths proportional to population
                total_cases - total # covid cases proportional to population
         Calculate frequency of deaths after covid infection
         Output: float'''
-    return total_death / total_cases
+    return total_death_case / total_cases
 
 def shared_frequency(c1_death, c2_death, c1_cases, c2_cases):
     '''Inputs: c1_death - country 1's total death
@@ -83,10 +83,10 @@ if __name__ == '__main__':
     '''hypothesis testing: H0 - other countries probability of death match US 
     # Ha - US mean is > other countries' probability of death after diagnosis'''
     #calculate frequency or probability of death after covid diagnosis for each country
-    us_p = death_frequency(us_total_prop_death, us_total_prop)
-    can_p = death_frequency(can_total_prop_death,  can_total_prop)
-    aus_p = death_frequency(aus_total_prop_death, aus_total_prop)
-    nz_p = death_frequency(nz_total_prop_death, nz_total_prop)
+    us_p = death_case_frequency(us_total_prop_death, us_total_prop)
+    can_p = death_case_frequency(can_total_prop_death,  can_total_prop)
+    aus_p = death_case_frequency(aus_total_prop_death, aus_total_prop)
+    nz_p = death_case_frequency(nz_total_prop_death, nz_total_prop)
     # print(us_p, can_p, aus_p, nz_p)
 
     #calculate shared frequency and plot normal distribution with country US - x 
@@ -118,4 +118,43 @@ if __name__ == '__main__':
     aus_norm_dist = binom_approx_norm_dist(aus_total_prop, aus_p)
     nz_norm_dist = binom_approx_norm_dist(nz_total_prop, nz_p)
 
-    
+    #comparing daily positives to daily tests
+    us_total_prop = covid_merge['US_Daily_prop'].sum()
+    can_total_prop = covid_merge['Canada_Daily_prop'].sum()
+    aus_total_prop = covid_merge['Aus_Daily_prop'].sum()
+    nz_total_prop = covid_merge['NZ_Daily_prop'].sum()
+    us_total_tests_prop = 138020227 / us_pop
+    can_total_tests_prop = (canada_covid_total['numtested'].sum()) / can_pop
+    aus_total_tests_prop = (aus_covid['tests'].sum())/aus_pop
+    nz_total_tests_prop = 1072492 / nz_pop
+
+    us_p_case = death_case_frequency(us_total_prop, us_total_tests_prop)
+    can_p_case = death_case_frequency(can_total_prop, can_total_tests_prop)
+    aus_p_case = death_case_frequency(aus_total_prop, aus_total_tests_prop)
+    nz_p_case = death_case_frequency(nz_total_prop, nz_total_tests_prop)
+    # print(us_p_case, can_p_case, aus_p_case, nz_p_case)
+    # print(us_total_tests_prop, can_total_tests_prop, aus_total_tests_prop, nz_total_tests_prop)
+
+    #calculate shared frequency and plot normal distribution with country US - x 
+    #since the skeptic would say US <= country x
+    shared_p1_can_us = shared_frequency(us_total_prop, can_total_prop, us_total_tests_prop, can_total_tests_prop)
+    std1_can_us = shared_std(shared_p1_can_us, us_total_tests_prop, can_total_tests_prop)
+    diff_norm1_can_us = stats.norm(0, std1_can_us) #normal distribution of the differences in frequencies
+    shared_p1_aus_us = shared_frequency(us_total_prop, aus_total_prop, us_total_tests_prop, aus_total_tests_prop)
+    std1_aus_us = shared_std(shared_p1_aus_us, us_total_tests_prop, aus_total_tests_prop)
+    diff_norm1_aus_us = stats.norm(0, std1_aus_us) 
+    shared_p1_nz_us = shared_frequency(us_total_prop, nz_total_prop, us_total_tests_prop,nz_total_tests_prop)
+    std1_nz_us = shared_std(shared_p1_nz_us, us_total_tests_prop, nz_total_tests_prop)
+    diff_norm1_nz_us = stats.norm(0, std1_nz_us) 
+
+
+   #calculate p_value for difference in frequencies for hypothesis test
+    diff_freq1_can_us = diff_frequencies(us_p_case, can_p_case)
+    p_value1_can_us = p_value(diff_norm1_can_us, diff_freq1_can_us)
+    diff_freq1_aus_us = diff_frequencies(us_p_case, aus_p_case)
+    p_value1_aus_us = p_value(diff_norm1_aus_us, diff_freq1_aus_us)
+    diff_freq1_nz_us = diff_frequencies(us_p_case, nz_p_case)
+    p_value1_nz_us = p_value(diff_norm1_nz_us, diff_freq1_nz_us)
+    # print(diff_freq1_can_us, p_value1_can_us)
+    # print(diff_freq1_aus_us, p_value1_aus_us)
+    # print(diff_freq1_nz_us, p_value1_nz_us)
