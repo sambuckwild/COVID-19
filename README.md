@@ -5,10 +5,17 @@ go with purpose: if the us had public health like Canada, Aus, NZ, would we have
 
 # Background + Motivation
 
-# Raw Data + Data Cleaning
-show list of columns & datatype --> so that way can show what I paired it down to
-(might take away more columns again)
-link to sources for data, how many data points (rows) etc
+# Raw Data + Data Cleaning  
+
+The initial data for all four countries was obtained from multiple sources, then cleaned into new datasets and two merged datasets.  
+
+**Initial Data**
+| United States Data | Canada Data | Australia Data | New Zealand Data |
+| : ----- : | : ----- : | : -------- : | : ------ : |
+| 15 Columns |  31 Columns   | 17 Columns | 10 Columns |  
+| 16681 Rows | 3418 Rows | 277 Rows  |  4886 Rows | 
+| Split up by States by Date | Split up by Province By Date  | Split up by Date  | Split up by Region by Date  |
+| Retained 10 coulmns in cleaned dataframe |  Retained 11 columns | Retained all 17 columns  | Retained all 10 columns  |
 
 # Exploratory Data Analysis
 
@@ -69,12 +76,12 @@ I performed a hypothesis test test whether someone is more likely to die from a 
 >  H<sub>0</sub> : Probability of dying due to COVID-19 in US &le; Probability of dying due to COVID-19 in "x" country  
 > H<sub>a</sub> : Probability of dying due to COVID-19 in US > Probability of dying due to COVID-19 in "x" country<br>  
 
-Due to the p-values from each test with &Alpha; = 0.10, I was not able to reject the null hypothesis or conclude that there is a significance difference in the probability of dying due to COVID-19 between the United States and Canada, Australia, or New Zealand.   
+Due to the p-values from each test with &alpha; = 0.10, I was not able to reject the null hypothesis; thus, I could not conclude that there is a significant difference in the probability of dying due to COVID-19 between the United States and Canada, Australia, or New Zealand.   
 > p-value for H<sub>0</sub> US Probability &le; Canada Probability: 0.997   
 > p-value for H<sub>0</sub> US Probability &le; Australia Probability: 0.603   
 > p-value for H<sub>0</sub> US Probability &le; New Zealand Probability: 0.388    
 
-This makes sense when you look at the proportional frequency of death for each country as they are very close to each other even though the plot made it look much worse in the Unite States.
+Even though the plot made it look like the death rate was much worse in the United States, this conclusion makes sense when you look at the proportional frequency of death for each country as they are very close to each other.
 
 | **Country**        | **Frequency of Death due to COVID-19 per 100,000 people** | **Total # COVID-19 Cases per 100,000 [through 10/12/2020]**| **Total # Deaths due to COVID-19 per 100,000 people [through 10/26/20]** |
 | :----------------: | :------------------------: | :------------------------------------------: | :--------: |
@@ -84,7 +91,8 @@ This makes sense when you look at the proportional frequency of death for each c
 |    New Zealand     |              0.019       |                       23.9                   |      0.46    |
 <br>
 
+# Future Steps   
 
-# Future Steps
+Future analysis could be a hypothesis test comparing the probability of getting infected with COVID-19 in the United States compared to the other countries, comparing demographics from each country to see which age group/sex/ethnicity etc. are more likely to contract COVID-19 or die from a COVID-19 infection, and to see which country had the most expenditures relating to the pandemic. 
 
 # References
